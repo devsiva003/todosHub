@@ -1,0 +1,96 @@
+body {
+  position: relative;
+}
+
+.toaster-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #000;
+  opacity: 0.5;
+  width: 100%;
+  min-height: 100%;
+  z-index: 998;
+}
+
+.toaster-wrap {
+  position: fixed;
+  margin: 0.5rem;
+  z-index: 999;
+  overflow: hidden;
+}
+
+.toaster-wrap .toaster-inner {
+  background-color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  box-shadow: 2px 3px 5px rgba(0, 0, 0, 0.15);
+  animation: slide-up 0.3s linear;
+  transition: transform 0.3s;
+  position: relative;
+}
+
+.toaster-wrap .toaster-inner::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  z-index: -1;
+}
+
+.toaster-wrap.is-error .toaster-inner {
+  background-color: rgba(255, 127, 80, 0.5);
+  border: 1px solid rgba(255, 127, 80, 0.75);
+  color: #fff;
+}
+
+.toaster-wrap.is-success .toaster-inner {
+  background-color: rgba(144, 238, 144, 0.5);
+  border: 1px solid rgba(144, 238, 144, 0.75);
+  color: #000;
+}
+
+.toaster-wrap.center,
+.toaster-wrap.center-center {
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+}
+
+.toaster-wrap[class*="top-"] {
+  top: 0;
+}
+
+.toaster-wrap[class*="bottom-"] {
+  bottom: 0;
+}
+
+.toaster-wrap[class*="-left"] {
+  left: 0;
+}
+
+.toaster-wrap[class*="-right"] {
+  right: 0;
+}
+
+.toaster-wrap[class*="center-"] {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.toaster-wrap[class*="-center"] {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+@keyframes slide-up {
+  0% {
+    transform: translateY(150vh);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}

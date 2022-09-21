@@ -1,0 +1,36 @@
+@import url(https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap);
+
+* > * {
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  transition: 0.25s linear;
+  transition-property: color, background-color;
+}
+
+body {
+  margin: 0;
+  padding: 0.5rem;
+  width: 100%;
+  min-height: 100vh;
+  background-color: #2e86ab;
+  font-size: 1em;
+  position: relative;
+}
+
+input,
+button {
+  font-size: 1em;
+}
+
+a {
+  text-decoration: none;
+  color: rgb(122, 21, 204);
+}
+
+.react-icons {
+  vertical-align: middle;
+}
+
+.react-icons ~ * {
+  margin-left: 0.15rem;
+}

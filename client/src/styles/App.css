@@ -1,0 +1,352 @@
+.App {
+  width: 580px;
+  max-width: 100%;
+  padding: 1rem 0.25rem;
+  margin: auto;
+}
+
+.App > h1 {
+  text-align: center;
+  background-color: #fff;
+  border-radius: 5px 5px 0 0;
+  box-shadow: 2px 3px 8px rgba(0, 0, 0, 0.15);
+  padding: 0.5rem 0;
+}
+
+.App > h1 > a {
+  color: #2e86ab;
+}
+
+.App > h1 > a > span {
+  color: #ffa400;
+}
+
+.App .container {
+  background-color: #fff;
+  box-shadow: 2px 3px 8px rgba(0, 0, 0, 0.15);
+  padding: 0.25rem 0;
+  border-radius: 3px;
+}
+
+.App .input-field {
+  outline: none;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  padding: 0.5rem;
+  border-radius: 3px;
+}
+
+.App .btn {
+  outline: none;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  padding: 0 1rem;
+}
+
+.App .btn.is-disabled {
+  opacity: 0.65;
+  pointer-events: none;
+}
+
+.signup-form,
+.login-form,
+.todo-modifier-form {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 2rem;
+  row-gap: 0.75rem;
+}
+
+.signup-form .form-title,
+.login-form .form-title {
+  margin: 0;
+}
+
+.signup-form .btn-submit,
+.login-form .btn-submit {
+  background-color: rgb(68, 170, 68);
+  color: #fff;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.signup-form .error-msg,
+.login-form .error-msg,
+.todo-modifier-form .error-msg,
+.profile-update-form .error-msg {
+  background-color: rgba(240, 128, 128, 0.5);
+  border: 1px solid rgba(240, 128, 128, 0.75);
+  border-radius: 3px;
+  padding: 0.25rem;
+  margin-top: 0.25rem;
+}
+
+.container.loading-bar {
+  margin: 1rem 0;
+  padding: 0.75rem 0.25rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.container.loading-bar::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 5px;
+  background-color: lightgreen;
+  animation: loading-progress 3s ease infinite alternate;
+}
+
+.container .form-info-msg {
+  text-align: center;
+  margin: 0 1rem;
+  padding: 0.5rem 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+.container.about-page {
+  padding: 0.5rem 1rem;
+}
+
+.container.page-not-found {
+  text-align: center;
+}
+
+.container.user-profile {
+  position: relative;
+  padding: 0.5rem 1rem;
+}
+
+.user-profile .input-field {
+  width: 100%;
+}
+
+.user-profile .input-field:read-only {
+  opacity: 0.75;
+}
+
+.user-profile .edit-profile-btn {
+  position: absolute;
+  top: 0.25rem;
+  right: 0.25rem;
+  padding: 0.25rem;
+  background-color: #ffa400;
+  color: #fff;
+  box-shadow: 2px 3px 8px rgba(0, 0, 0, 0.15);
+}
+
+.user-profile > h2 {
+  margin: 1rem 0;
+}
+
+.user-profile .profile-update-form {
+  margin-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.user-profile .group {
+  margin-bottom: 1rem;
+}
+
+.user-profile .group > label {
+  margin-right: 0.5rem;
+}
+
+.user-profile .input-wrapper {
+  position: relative;
+  margin-top: 0.25rem;
+}
+
+.user-profile .input-wrapper .btn {
+  position: absolute;
+  right: 0.25rem;
+  top: 50%;
+  transform: translateY(-50%);
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+}
+
+.user-profile .btn.btn-submit {
+  width: 100%;
+  padding: 0.5rem 0;
+  background-color: #ffa400;
+  color: #fff;
+}
+
+.todo-modifier-form .submit-btn {
+  background-color: #ffa400;
+  color: #fff;
+  padding: 0.25rem 0;
+}
+
+.todo-modifier-form .btn-wrap {
+  text-align: right;
+}
+
+.todo-modifier-form .cancel-btn {
+  background-color: rgba(240, 128, 128, 0.5);
+}
+
+.todos-wrapper {
+  margin: 1rem 0 0;
+}
+
+.todos-wrapper .todos-search-filters {
+  margin: 0.5rem 0 1rem;
+  padding: 0.5rem 0.5rem;
+  box-shadow: 2px 3px 8px rgba(0, 0, 0, 0.15);
+}
+
+.todos-search-filters .search-bar input {
+  width: 100%;
+  padding: 0 0.5rem;
+  height: 2.5rem;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: inherit;
+  outline: none;
+}
+
+.todos-search-filters .filters-wrap {
+  margin-top: 0.5rem;
+}
+
+.todos-search-filters input[type="radio"] {
+  appearance: none;
+}
+
+.todos-search-filters .tag {
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.05);
+  padding: 1px 0.5rem;
+  border-radius: 3px;
+}
+
+.todos-search-filters input:checked + .tag {
+  background-color: #2e86ab;
+  color: #fff;
+}
+
+.todos-wrapper .empty-msg,
+.todos-wrapper .error-msg {
+  text-align: center;
+  padding: 0.75rem 0;
+}
+
+.todos-wrapper .todo-item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 5px;
+  padding: 0.25rem 1rem;
+  margin-bottom: 1rem;
+  box-shadow: 3px 5px 8px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+  animation: fade 0.2s linear;
+}
+
+.todo-item .todo-name {
+  margin-left: 1rem;
+  cursor: pointer;
+}
+
+.todo-item .btn-group {
+  margin-left: auto;
+  transform: translateX(150%);
+  transition: transform 0.3s;
+}
+
+.todo-item:hover .btn-group {
+  transform: translateX(0);
+}
+
+.todo-item.is-inactive .btn-group {
+  transform: translateX(150%);
+}
+
+.todo-item .done-icon {
+  position: absolute;
+  top: 0.25rem;
+  left: 0.25rem;
+  font-size: 1.25rem;
+}
+
+.todo-item .todo-edit-btn,
+.todo-item .todo-delete-btn {
+  background-color: #ffa400;
+  color: #fff;
+  border-radius: 3px;
+  box-shadow: 2px 3px 3px rgba(0, 0, 0, 0.15);
+}
+
+.todo-item .todo-edit-btn {
+  margin-right: 0.5rem;
+}
+
+.todo-item .modified-at {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  padding: 0 0.5rem;
+  border-radius: 3px 0 0;
+  background-color: rgb(216, 245, 50);
+  transition: bottom 0.3s linear;
+}
+
+.todo-item:hover .modified-at {
+  bottom: -150%;
+}
+
+.todo-item.is-inactive .modified-at {
+  bottom: -150%;
+}
+
+.todo-item.is-done .done-icon {
+  color: #2a2a72;
+}
+
+.todo-item.is-done .todo-name {
+  text-decoration: line-through;
+}
+
+.todo-item.is-inactive {
+  pointer-events: none;
+  opacity: 0.65;
+}
+
+@keyframes loading-progress {
+  100% {
+    width: 100%;
+  }
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.App .footer {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  display: flex;
+  justify-content: space-between;
+  padding: 0.75rem 1rem;
+  margin-top: 1rem;
+}
+
+.App .footer.content-center {
+  justify-content: center;
+}
+
+.footer .btn.btn-logout {
+  color: rgb(122, 21, 204);
+  background-color: unset;
+  padding: 0;
+}
