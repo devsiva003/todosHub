@@ -4,6 +4,8 @@
 
 <p>The TodosHub is a todo app build with MERN Stack</p>
 
+[![todosHub link](https://img.shields.io/badge/todoshub.onrender.com-000?style=for-the-badge&logo=render)](https://todoshub.onrender.com/ "Click to view site")
+
 </div>
 
 ## Tech Stack
