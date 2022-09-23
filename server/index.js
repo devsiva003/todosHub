@@ -22,6 +22,8 @@ connectDB().then(() =>
   )
 )
 
+app.get("/", (_, res) => res.json({ success: true }))
+
 /* Routes */
 app.use("/todos", requireAuth, TodoRoutes)
 app.use("/users", UserRoutes)

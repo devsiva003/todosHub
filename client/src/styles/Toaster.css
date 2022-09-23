@@ -18,12 +18,13 @@ body {
   margin: 0.5rem;
   z-index: 999;
   overflow: hidden;
+  border-radius: 5px;
 }
 
 .toaster-wrap .toaster-inner {
   background-color: #fff;
   padding: 0.5rem 1rem;
-  border-radius: 5px;
+  border-radius: inherit;
   box-shadow: 2px 3px 5px rgba(0, 0, 0, 0.15);
   animation: slide-up 0.3s linear;
   transition: transform 0.3s;

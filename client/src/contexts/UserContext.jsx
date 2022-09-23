@@ -1,5 +1,7 @@
 import jwtDecode from "jwt-decode"
-import React, { createContext, useEffect, useReducer } from "react"
+import React, { createContext, useEffect, useReducer, useState } from "react"
+import { HiExclamationCircle } from "react-icons/hi"
+import Toaster from "../components/Toaster"
 
 export const UserContext = createContext()
 
@@ -25,15 +27,18 @@ const UserContextProvider = ({ children }) => {
     isLoading: true,
   })
 
+  const [hasStorage, setHasStorage] = useState(true)
+
   useEffect(() => {
     const verifyToken = () => {
-      const token = localStorage.getItem("token") || null
       try {
+        const token = localStorage.getItem("token") || null
         const decoded = jwtDecode(token)
         dispatch({ type: "AUTH_VERIFY", payload: decoded })
       } catch (err) {
-        // console.log(err)
-        localStorage.removeItem("token")
+        // console.log(err.message)
+        if (err.message.indexOf("localStorage") > -1) setHasStorage(false)
+        else localStorage.removeItem("token")
       }
     }
     verifyToken()
@@ -49,6 +54,19 @@ const UserContextProvider = ({ children }) => {
   return (
     <UserContext.Provider value={{ ...state, dispatch }}>
       {children}
+      {!hasStorage && (
+        <Toaster backdrop noTimeout position="center">
+          <center>
+            <HiExclamationCircle size={"5rem"} />
+            <h4>Storage Permission Denied</h4>
+          </center>
+          <p>Our app doesn't work without cookies and/or storage</p>
+          <p>
+            Please make sure that your browser supports cookies and/or storage
+            and it's enabled
+          </p>
+        </Toaster>
+      )}
     </UserContext.Provider>
   )
 }
